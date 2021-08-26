@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@typedorm/common": "^1.14.4",
+    "@typedorm/core": "^1.14.4",
+    "aws-sdk": "^2.976.0",
+    "reflect-metadata": "^0.1.13",
     "ts-node": "^10.2.1",
     "typescript": "^4.3.5"
   }
