@@ -1,0 +1,88 @@
+{
+  "ModelName": "InvalidSetRepro",
+  "ModelMetadata": {
+    "Author": "mitchell amihod",
+    "DateCreated": "Aug 25, 2021, 07:53 PM",
+    "DateLastModified": "Aug 25, 2021, 08:29 PM",
+    "Description": "Simple table for a repro of invalid set",
+    "AWSService": "Amazon DynamoDB",
+    "Version": "3.0"
+  },
+  "DataModel": [
+    {
+      "TableName": "myTable",
+      "KeyAttributes": {
+        "PartitionKey": {
+          "AttributeName": "PK",
+          "AttributeType": "S"
+        },
+        "SortKey": {
+          "AttributeName": "SK",
+          "AttributeType": "S"
+        }
+      },
+      "NonKeyAttributes": [
+        {
+          "AttributeName": "body",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "related",
+          "AttributeType": "SS"
+        },
+        {
+          "AttributeName": "other",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "id",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "uuid",
+          "AttributeType": "S"
+        }
+      ],
+      "TableData": [
+        {
+          "PK": {
+            "S": "FOO:123#BAR:123"
+          },
+          "SK": {
+            "S": "ITEM#DATE#uuid-1"
+          },
+          "body": {
+            "S": "this is the body of my item"
+          },
+          "related": {
+            "SS": [
+              "1212",
+              "1213"
+            ]
+          },
+          "id": {
+            "S": "123"
+          },
+          "uuid": {
+            "S": "uuid-uuid-uuid-uuid"
+          }
+        },
+        {
+          "PK": {
+            "S": "AUTHOR:123"
+          },
+          "SK": {
+            "S": "ITEM#DATE"
+          },
+          "other": {
+            "S": "F for F"
+          }
+        }
+      ],
+      "DataAccess": {
+        "MySql": {}
+      },
+      "BillingMode": "PAY_PER_REQUEST"
+    }
+  ]
+}
